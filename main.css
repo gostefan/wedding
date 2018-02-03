@@ -1,0 +1,149 @@
+body {
+	margin: 0;
+	color: black;
+}
+
+div, td {
+	font-size: 20pt;
+}
+
+div.menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 0 30px 30px 0;
+	opacity: 0.8;
+	overflow: hidden;
+
+	font-size: 18pt;
+}
+
+div.menu img#hamburger {
+	width: 50px;
+}
+
+div.menu ul {
+	margin: 0;
+	padding: 0;
+	background-color: rgb(236, 221, 255);#white;
+	color: black;
+	transition: transform 0.5s ease, opacity 0.1s ease 0.5s, max-height 0.1s ease 0.6s, max-width 0.1s ease 0.6s;
+	transform: translateX(-100%);
+	max-height: 0;
+	max-width: 0;
+	opacity: 0;
+}
+
+div.menu:hover ul {
+	transition: transform 0.5s ease;
+	transform: translateX(0);
+	max-height: 100%;
+	max-width: 100%;
+	opacity: 1;
+}
+
+div.menu ul li {
+	transition: background 0.5s, color 0.5s;
+	padding: 25px 40px;
+	list-style-type: none;
+}
+
+div.menu ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+div.menu ul li:hover {
+	background-color: rgb(127, 105, 155);#black;
+}
+
+div.menu ul li:hover a {
+	color: rgb(236, 221, 255);# white;
+}
+
+div.staticImage {
+	background-attachment: fixed;
+	background-size: cover;
+	padding-top: 50px;
+	border-bottom: 1px solid transparent;
+	min-height: 100%;
+	color: white;
+	text-align: center;
+}
+
+div.staticImage h2 {
+	margin-bottom: 250px;
+}
+
+div.scrolling {
+	background-color: white;#rgb(236, 221, 255);
+	padding-top: 50px;
+	text-align: center;
+}
+
+table {
+	margin: 30px auto;
+	border-spacing: 10px;
+	color: rgb(236, 221, 255);
+	background-color: rgb(127, 105, 155);
+	box-shadow: 3px 5px 20px grey;
+	transition: background 0.5s, color 0.5s;
+}
+table:hover {
+	background-color: rgb(236, 221, 255);
+	color: rgb(127, 105, 155);
+}
+
+tr {
+}
+td {
+	padding: 3px 10px;
+}
+
+div.wishes {
+	clear: both;
+
+	color: black;
+}
+
+div.wishColumn {
+	float: left;
+	width: 50%;
+}
+
+div.wish {
+	opacity: 0.9;
+	margin: 30px 5%;
+	padding: 10px;
+	background-color: white;
+	font-size: 15pt;
+}
+
+div.wish img {
+	opacity: 1;
+	float: left;
+	width: 40%;
+	margin-right: 3%;
+	box-shadow: 3px 3px 5px grey;
+}
+div.wish h3 {
+	font-size: 18pt;
+}
+
+div.wish div.hidden {
+	#height: 0;
+	max-height: 0;
+	opacity: 0;
+	transition: max-height 1s, opacity 0.5s;
+}
+div.wish:hover div.hidden {
+	#height: auto;
+	max-height: 100%;
+	opacity: 1;
+	transition: max-height 1s, opacity 0.5s, height 1s ease 1s;
+}
+
+hr.break {
+	clear: both;
+	border: 1px solid transparent;
+}

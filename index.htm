@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="./main.css" />
+		<title>Oli &amp; Stefans Hochzeit</title>
+		<script type="text/javascript">
+			var scrollFactor = 0.05;
+			function scrollToResolver(element) {
+				var distance = element.getBoundingClientRect().top;
+				var jump = parseInt(distance * scrollFactor);
+				if (jump == 0 && Math.abs(distance) > 0.5 && element.scrollFactor <= 0.5) {
+					element.scrollFactor *= 2;
+					jump = parseInt(distance * element.scrollFactor);
+				}
+
+				document.body.scrollTop += jump;
+				document.documentElement.scrollTop += jump;
+				var lastTop = document.body.scrollTop;
+
+				if (jump != 0 && (!element.lastTop || element.lastTop != lastTop)) {
+					element.lastTop = lastTop;
+					setTimeout(function() { scrollToResolver(element);}, "20");
+				} else
+					element.lastTop = null;
+			}
+			function scrollToId(name) {
+				element = document.getElementsByName(name)[0];
+				element.scrollFactor = scrollFactor;
+				scrollToResolver(element);
+				//element.scrollIntoView();
+				return false;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="menu">
+			<img id="hamburger" src="./images/hamburger.png" />
+			<ul>
+				<li><a href="index.htm#information" onClick="return scrollToId('information')">Informationen</a></li>
+				<li><a href="anmelden.htm">Anmelden</a></li>
+				<li><a href="wuenschliste.htm">Wunschliste</a></li>
+				<li><a href="index.htm">Gallerie</a></li>
+			</ul>
+		</div>
+		<div class="staticImage" style="background-image: url(./images/OliStefan.jpg);">
+			<p>Olivia &amp; Stefan heiraten!</p>
+			<div style="height: 60%;">&nbsp;</div>
+			<p>am 21. Juli 2018 in der Kirche Wädenswil</p>
+		</div>
+		<div class="scrolling">
+			<h2><a name="information" />Informationen:</h2>
+			<table>
+				<tr><td>Wann:</td><td>21. Juli 2018 um 14:00 Uhr</td></tr>
+				<tr><td>Wo:</td><td>Reformierte Kirche W&auml;denswil</td>
+			</table>
+			<table>
+				<tr><td>Garderobe:</td><td>Kommt, wie ihr es für richtig haltet.</td></tr>
+				<tr><td>Danach:</td><td>Apero! Bitte meldet euch an.</td></tr>
+			</table>
+			<div style="min-height: 150px">&nbsp;</div>
+		</div>
+	</body>
+</html>

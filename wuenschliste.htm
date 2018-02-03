@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="./main.css" />
+		<title>Wunschliste - Oli &amp; Stefans Hochzeit</title>
+		<script type="text/javascript">
+			var scrollFactor = 0.05;
+			function scrollToResolver(element) {
+				var distance = element.getBoundingClientRect().top;
+				var jump = parseInt(distance * scrollFactor);
+				if (jump == 0 && Math.abs(distance) > 0.5 && element.scrollFactor <= 0.5) {
+					element.scrollFactor *= 2;
+					jump = parseInt(distance * element.scrollFactor);
+				}
+
+				document.body.scrollTop += jump;
+				document.documentElement.scrollTop += jump;
+				var lastTop = document.body.scrollTop;
+
+				if (jump != 0 && (!element.lastTop || element.lastTop != lastTop)) {
+					element.lastTop = lastTop;
+					setTimeout(function() { scrollToResolver(element);}, "20");
+				} else
+					element.lastTop = null;
+			}
+			function scrollToId(name) {
+				element = document.getElementsByName(name)[0];
+				element.scrollFactor = scrollFactor;
+				scrollToResolver(element);
+				//element.scrollIntoView();
+				return false;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="menu">
+			<img id="hamburger" src="./images/hamburger.png" />
+			<ul>
+				<li><a href="index.htm">Startseite</a></li>
+				<li><a href="index.htm#information">Informationen</a></li>
+				<li><a href="anmelden.htm">Anmelden</a></li>
+				<li><a href="index.htm">Gallerie</a></li>
+			</ul>
+		</div>
+		<div class="scrolling">
+			<h1>Wunschliste</h1>
+		</div>
+		<div class="staticImage" style="min-height: 50%; background-image: url(./images/diving.jpg);">
+			<h2>Tauchen</h2>
+			<div class="wishes">
+				<div class="wishColumn">
+					<div class="wish">
+						<img src="./images/tg5.jpg" />
+						<h3>Tauchkamera Olympus TG-5</h3>
+						<p>Wir w&uuml;nschen uns genau DIE Kamera</p>
+						<table><tr><td>Marke</td><td>Olympus</td></tr></table>
+					</div>
+					<div class="wish">
+						<img src="./images/tg5case.jpg" />
+						<h3>Geh&auml;use zu Olympus TG-5</h3>
+						<p>Und das ist das Gehäuse dazu</p>
+					</div>
+				</div>
+				<div class="wishColumn">
+					<div class="wish">
+						<img src="./images/tg5.jpg" />
+						<h3>Tauchkamera Olympus TG-5</h3>
+						<p>Wir w&uuml;nschen uns genau DIE Kamera</p>
+						<table><tr><td>Marke</td><td>Olympus</td></tr></table>
+					</div>
+					<div class="wish">
+						<img src="./images/tg5case.jpg" />
+						<h3>Geh&auml;use zu Olympus TG-5</h3>
+						<p>Und das ist das Gehäuse dazu</p>
+					</div>
+				</div>
+				<hr class="break" />
+			</div>
+		</div>
+		<div class="staticImage" style="min-height: 50%; background-image: url(./images/travels.jpg);">
+			<h2>Hochzeitsreise</h2>
+			<div class="wishes">
+				<div class="wishColumn">
+					<div class="wish">
+						<img src="./images/tg5.jpg" />
+						<h3>Tauchkamera Olympus TG-5</h3>
+						<p>Wir w&uuml;nschen uns genau DIE Kamera</p>
+						<table><tr><td>Marke</td><td>Olympus</td></tr></table>
+					</div>
+					<div class="wish">
+						<img src="./images/tg5case.jpg" />
+						<h3>Geh&auml;use zu Olympus TG-5</h3>
+						<p>Und das ist das Gehäuse dazu</p>
+					</div>
+				</div>
+				<div class="wishColumn">
+					<div class="wish">
+						<img src="./images/tg5.jpg" />
+						<h3>Tauchkamera Olympus TG-5</h3>
+						<p>Wir w&uuml;nschen uns genau DIE Kamera</p>
+						<table><tr><td>Marke</td><td>Olympus</td></tr></table>
+					</div>
+					<div class="wish">
+						<img src="./images/tg5case.jpg" />
+						<h3>Geh&auml;use zu Olympus TG-5</h3>
+						<p>Und das ist das Gehäuse dazu</p>
+					</div>
+				</div>
+				<hr class="break" />
+			</div>
+		</div>
+	</body>
+</html>
