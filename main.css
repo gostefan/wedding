@@ -14,6 +14,7 @@ div.menu {
 	padding: 0 30px 30px 0;
 	opacity: 0.8;
 	overflow: hidden;
+	z-index: 10;
 
 	font-size: 18pt;
 }
@@ -48,7 +49,7 @@ div.menu ul li {
 	list-style-type: none;
 }
 
-div.menu ul li a {
+div.menu ul a {
 	text-decoration: none;
 	color: black;
 }
