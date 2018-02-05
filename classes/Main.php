@@ -8,14 +8,25 @@ class Main {
 	}
 
 	private function __construct() {
+		$this->site = $this->getSite();
+	}
+
+	private function getSite() {
 		if (isset($_GET['site']))
-			$site = $_GET['site'];
+			$siteName = $_GET['site'];
 		else
-			$site = "home";
+			$siteName = "home";
+		$siteManager = new SiteManager();
+		return $siteManager->getSite($siteName);
 	}
 
 	public function render() {
-		print "hello world";
+		$header = new Header();
+		$menu = new MenuManager();
+		$header->renderHeader();
+		$menu->render();
+		$this->site->render();
+		$header->renderFooter();
 	}
 
 	private $site;
