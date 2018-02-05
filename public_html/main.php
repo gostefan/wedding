@@ -1,6 +1,9 @@
 <?php
-	if (isset($_GET['site']))
-		print "hello" . $_GET['site'];
-	else 
-		print "none";
+	spl_autoload_register(
+		function ($class_name) {
+			include '../classes/' . $class_name . '.php';
+		}
+	);
+	$main = Main::get();
+	$main->render();
 ?>
