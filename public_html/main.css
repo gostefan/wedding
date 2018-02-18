@@ -1,6 +1,39 @@
+<?php
+	$offwhite = "236, 221, 255";
+	$lavender = "127, 105, 155";
+?>
+@font-face {
+    font-family: 'Amanda';
+    src: url(./fonts/Amanda.ttf);
+}
+@font-face {
+    font-family: 'ChampagneLimousines';
+    src: url(./fonts/ChampagneLimousines.ttf);
+}
+@font-face {
+    font-family: 'bernadette';
+    src: url(./fonts/bernadette.ttf);
+}
+
+
 body {
 	margin: 0;
 	color: black;
+	font-family: ChampagneLimousines;
+}
+
+h1 {
+	font-family: Amanda;
+	font-weight: normal;
+	font-size: 80pt;
+}
+h1 span.fix {
+	font-family: bernadette;
+	font-size: 70pt;
+}
+
+h2 {
+	font-size: 40pt;
 }
 
 div, td {
