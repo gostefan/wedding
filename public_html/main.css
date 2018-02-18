@@ -98,6 +98,7 @@ div.menu ul li:hover a {
 div.staticImage {
 	background-attachment: fixed;
 	background-size: cover;
+	background-position: center;
 	padding-top: 50px;
 	border-bottom: 1px solid transparent;
 	min-height: 100%;
