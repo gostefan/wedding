@@ -1,12 +1,12 @@
 <?php
 class Database {
-	private static $server   = "localhost";
-	private static $user     = "yourUser";
-	private static $password = "yourPassword";
-	private static $dbName   = "yourDB";
+	private const SERVER   = "localhost";
+	private const USER     = "wedding";
+	private const PASSWORD = "0r71NMW#aLvk4!z$";
+	private const DB_NAME  = "sgoetschi_wedding";
 	public function __construct() {
-		$this->connection = new mysqli($server, $user, $password, $dbName);
-		if ($this->connection->connection_error)
+		$this->connection = new mysqli(self::SERVER, self::USER, self::PASSWORD, self::DB_NAME);
+		if ($this->connection->connect_error)
 			throw new Exception("Couldn't connect to the server.");
 	}
 
@@ -14,8 +14,8 @@ class Database {
 		$this->connection->close();
 	}
 
-	public function query($query) {
-		return $this->connection->query($query);
+	public function prepare($query) {
+		return $this->connection->prepare($query);
 	}
 
 	private $connection;
