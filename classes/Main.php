@@ -21,12 +21,17 @@ class Main {
 	}
 
 	public function render() {
-		$header = new Header();
-		$menu = new MenuManager();
-		$header->renderHeader();
-		$menu->render();
+		if ($this->site->hasHeader()) {
+			$header = new Header();
+			$header->renderHeader();
+		}
+		if ($this->site->hasMenu()) {
+			$menu = new MenuManager();
+			$menu->render();
+		}
 		$this->site->render();
-		$header->renderFooter();
+		if ($this->site->hasFooter())
+			$header->renderFooter();
 	}
 
 	private $site;
