@@ -1,6 +1,6 @@
 <?php
 class Utils {
-	private static $goodChars = "abcdefghijklmnopqrstuvwxyz";
+	private static $goodChars = "abcdefghijklmnopqrstuvwxyz/";
 	public static function cleanName($name) {
 		$length = strlen($name);
 		$result = "";
