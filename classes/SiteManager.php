@@ -7,6 +7,8 @@ class SiteManager {
 		switch($cleanName) {
 			case "wunschliste":
 				return new WishListPage();
+			case "login":
+				return new LoginPage();
 			default:
 				return new HtmlPage($cleanName);
 		}
