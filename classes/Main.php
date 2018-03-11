@@ -2,6 +2,7 @@
 class Main {
 	private static $singleton = NULL;
 	public static function get() {
+		session_start();
 		if (self::$singleton == NULL)
 			self::$singleton = new Main();
 		return self::$singleton;
