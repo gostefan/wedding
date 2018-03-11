@@ -34,7 +34,7 @@ class MenuManager {
 				<a href="/home"><li>Startseite</li></a>
 				<a href="/home#information" onClick="return scrollToId('information')"><li>Informationen</li></a>
 				<a href="/anmelden"><li>Anmelden</li></a>
-				<a href="/wuenschliste"><li>Wunschliste</li></a>
+				<a href="/wunschliste"><li>Wunschliste</li></a>
 				<a href="/home"><li>Gallerie</li></a>
 			</ul>
 		</div>
