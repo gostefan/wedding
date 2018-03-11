@@ -101,12 +101,15 @@ div.staticImage {
 	background-position: center;
 	padding-top: 50px;
 	border-bottom: 1px solid transparent;
-	min-height: 100%;
 	color: white;
 	text-align: center;
 }
 
-div.staticImage h2 {
+div#Faces {
+	min-height: 100%;
+}
+
+div#Faces h2 {
 	margin-bottom: 250px;
 }
 
