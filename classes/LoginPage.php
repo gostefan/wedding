@@ -3,6 +3,11 @@ class LoginPage {
 	public function __construct() {
 		$this->user = User::getLoggedIn();
 	}
+	
+	public static function doLogin($afterLoginPage) {
+		$_SESSION["login.afterRedirect"] = $afterLoginPage;
+		header("Location:./login");
+	}
 
 	public function hasHeader() {
 		return true;
@@ -24,7 +29,6 @@ class LoginPage {
 				// Log in existing user
 				$user = User::getUserByUsername($_POST["username"]);
 				$login = $user->login($_POST["password"]);
-				exit(1);
 			}
 		}
 		if ($this->user == null) {
@@ -49,7 +53,12 @@ class LoginPage {
 					<p><input type="submit" value="Benutzer erstellen" /></p>
 				</form>
 			</div>
-<?php
+<?php	} else {
+			if (isset($_SESSION["login.afterRedirect"]))
+				$target = $_SESSION["login.afterRedirect"];
+			else
+				$target = "./home";
+			header("Location:" . $target);
 		}
 	}
 
