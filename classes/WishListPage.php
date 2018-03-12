@@ -63,7 +63,7 @@ class WishListPage {
 									<h3><?php echo htmlentities(utf8_encode($wish['name']), ENT_SUBSTITUTE); ?></h3>
 									<p><?php echo htmlentities(utf8_encode($wish['descr']), ENT_SUBSTITUTE); ?></p>
 									<p>Wert: <?php echo $wish["price"]; ?> CHF</p>
-									<p><a class="button" href="./schenken?id=<?php echo $wish["id"]; ?>">Schenken</a></p>
+									<p><a class="button" href="./schenken?id=<?php echo $wish["id"]; ?>"><span>Schenken</span></a></p>
 								</div>
 							</div>
 							<div class="percentBox">

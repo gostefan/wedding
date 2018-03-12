@@ -36,17 +36,27 @@ h2 {
 	font-size: 40pt;
 }
 
-div, td, input {
+div, td, input, .button {
 	font-size: 20pt;
 }
 
-input {
+input, .button span {
 	padding: 7px 10px;
 	background: white;
 	opacity: 0.5;
 	border: 3px black solid;
 	min-width: 250px;
 	width: 25%;
+}
+
+.button {
+	text-decoration: none;
+}
+
+.button span:hover {
+	opacity: 0.8;
+	color: black;
+	transition: opacity 0.5s;
 }
 
 div.menu {
@@ -219,11 +229,6 @@ div.wish > div > div.table > div { /* Table cell -> now all content is hori and 
 
 div.wish > div > div.table > div h3, div.wish > div > div.table > div p {
 	margin: 10%;
-}
-
-.button {
-	padding: 10px;
-	border: 3px solid grey;
 }
 
 div.wish h3 {
