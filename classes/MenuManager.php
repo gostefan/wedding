@@ -36,6 +36,10 @@ class MenuManager {
 				<a href="/anmelden"><li>Anmelden</li></a>
 				<a href="/wunschliste"><li>Wunschliste</li></a>
 				<a href="/home"><li>Gallerie</li></a>
+<?php
+		if (User::getLoggedIn() != null) { ?>
+				<a href="/logout"><li>Logout</li></a>
+<?php } ?>
 			</ul>
 		</div>
 <?php	}

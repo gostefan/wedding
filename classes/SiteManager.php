@@ -9,6 +9,8 @@ class SiteManager {
 				return new WishListPage();
 			case "login":
 				return new LoginPage();
+			case "logout":
+				return new LogoutPage();
 			default:
 				return new HtmlPage($cleanName);
 		}

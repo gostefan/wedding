@@ -9,6 +9,11 @@ class User {
 		return null;
 	}
 
+	public static function logOut() {
+		if (isset($_SESSION['User.loggedIn']))
+			unset($_SESSION['User.loggedIn']);
+	}
+
 	private function __construct($value, $fromId) {
 		if ($fromId)
 			$this->getUserByIdInternal($value);
