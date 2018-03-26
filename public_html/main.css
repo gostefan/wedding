@@ -169,7 +169,7 @@ table {
 }
 table:hover {
 	background-color: rgb(<?php echo $offwhite; ?>);
-	color: rgb(<?php $lavender; ?>);
+	color: rgb(<?php echo $lavender; ?>);
 }
 
 tr {
