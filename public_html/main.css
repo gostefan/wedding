@@ -1,6 +1,6 @@
 <?php
-	$offwhite = "236, 221, 255";
-	$lavender = "127, 105, 155";
+	$offwhite = "234, 234, 234";
+	$lavender = "206,  50,  30";
 ?>
 @font-face {
     font-family: 'Amanda';
@@ -16,7 +16,7 @@
 }
 
 
-body {
+body, textarea {
 	margin: 0;
 	color: black;
 	font-family: ChampagneLimousines;
@@ -36,27 +36,43 @@ h2 {
 	font-size: 40pt;
 }
 
-div, td, input, .button {
+div, td, input, textarea, .button {
 	font-size: 20pt;
 }
 
-input, .button span {
+input, textarea, .button span {
 	padding: 7px 10px;
 	background: white;
 	opacity: 0.5;
-	border: 3px black solid;
+	border: 3px #444 solid;
 	min-width: 250px;
 	width: 25%;
+	transition: opacity 0.5s;
 }
+
+input.checkbox {
+	-webkit-appearance: none;
+	position: relative;
+	top: 7px;
+	min-width: auto;
+	border: 2px solid #444;
+	width: 25px;
+	height: 25px;
+	transition: background-color 0.5s, border-color 0.5s;
+}
+input.checkbox:checked {
+	background-color: green;
+	border-color: #BBB;
+}
+
 
 .button {
 	text-decoration: none;
 }
 
-.button span:hover {
+.button span:hover, input:hover {
 	opacity: 0.8;
 	color: black;
-	transition: opacity 0.5s;
 }
 
 div.menu {
@@ -136,6 +152,11 @@ div.scrolling {
 	background-color: white;
 	padding-top: 50px;
 	text-align: center;
+}
+
+.centerContainer {
+	display: inline-block;
+	text-align: left;
 }
 
 table {
