@@ -8,7 +8,7 @@ class WishListPage {
 		
 	}
 	
-	private const CATEGORY_SELECT = "SELECT `id`, `name`, `imageName` FROM `wishcategories` ORDER BY `order` ASC";
+	private const CATEGORY_SELECT = "SELECT `id`, `name`, `imageName` FROM `wishCategories` ORDER BY `order` ASC";
 	private function fetchCategories($db) {
 		$statement = $db->prepare(self::CATEGORY_SELECT);
 		$statement->execute();
