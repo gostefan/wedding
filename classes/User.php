@@ -25,26 +25,26 @@ class User {
 			$this->getUserByUsernameInternal($value);
 	}
 	
-	private const USERNAME_SELECT = "SELECT `id`, `name`, `email`, `username`, `pwd` FROM `users` WHERE `username` LIKE ?";
+	private const USERNAME_SELECT = self::FIELDS . " WHERE `username` LIKE ?";
 	private function getUserByUsernameInternal($username) {
 		$db = new Database();
 		$statement = $db->prepare(self::USERNAME_SELECT);
 		$statement->bind_param('s', $username);
 		$statement->execute();
-		$statement->store_result();
-		if ($statement->num_rows > 0) {
-			$statement->bind_result($this->id, $this->name, $this->email, $this->username, $this->pwd);
-			$statement->fetch();
-		} else
-			$this->id = -1;
+		$this->bindResults($statement);
 	}
 	
-	private const ID_SELECT = "SELECT `id`, `name`, `email`, `username`, `pwd` FROM `users` WHERE `id` = ?";
+	private const ID_SELECT = self::FIELDS . " WHERE `id` = ?";
 	private function getUserByIdInternal($id) {
 		$db = new Database();
 		$statement = $db->prepare(self::ID_SELECT);
 		$statement->bind_param('s', $id);
 		$statement->execute();
+		$this->bindResults($statement);
+	}
+	
+	private const FIELDS = "SELECT `id`, `name`, `email`, `username`, `pwd` FROM `users`";
+	private function bindResults($statement) {
 		$statement->store_result();
 		if ($statement->num_rows > 0) {
 			$statement->bind_result($this->id, $this->name, $this->email, $this->username, $this->pwd);
@@ -101,7 +101,7 @@ class User {
 		$statement->store_result();
 		return $statement->num_rows == 0;
 	}
-	private const EMAIL_SELECT = "SELECT `id`, `name`, `email`, `username`, `pwd` FROM `users` WHERE `email` LIKE ?";
+	private const EMAIL_SELECT = self::FIELDS . " WHERE `email` LIKE ?";
 	private static function checkEmailUnique($email) {
 		$db = new Database();
 		$statement = $db->prepare(self::EMAIL_SELECT);
@@ -111,7 +111,7 @@ class User {
 		return $statement->num_rows == 0;
 	}
 
-	private $id;
+	public $id;
 	private $name;
 	private $email;
 	private $username;
