@@ -43,12 +43,13 @@ class User {
 		$this->bindResults($statement);
 	}
 	
-	private const FIELDS = "SELECT `id`, `name`, `email`, `username`, `pwd` FROM `users`";
+	private const FIELDS = "SELECT `id`, `singular`, `name`, `dinnerInvite`, `email`, `username`, `pwd` FROM `users`";
 	private function bindResults($statement) {
 		$statement->store_result();
 		if ($statement->num_rows > 0) {
-			$statement->bind_result($this->id, $this->name, $this->email, $this->username, $this->pwd);
+			$statement->bind_result($this->id, $singular, $this->name, $this->dinnerInvite, $this->email, $this->username, $this->pwd);
 			$statement->fetch();
+			$this->singular = $singular == 1;
 		} else
 			$this->id = -1;
 	}
@@ -112,9 +113,12 @@ class User {
 	}
 
 	public $id;
+	public $singular;
 	private $name;
 	private $email;
 	private $username;
 	private $pwd;
+
+	public $dinnerInvite;
 }
 ?>
