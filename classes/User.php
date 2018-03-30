@@ -27,9 +27,13 @@ class User {
 	
 	private const USERNAME_SELECT = self::FIELDS . " WHERE `username` LIKE ?";
 	private function getUserByUsernameInternal($username) {
+		if (strpos($username, "%") !== FALSE) {
+			$this->id = -1;
+			return;
+		}
 		$db = new Database();
 		$statement = $db->prepare(self::USERNAME_SELECT);
-		$statement->bind_param('s', $username);
+		$statement->bind_param('s', utf8_decode($username));
 		$statement->execute();
 		$this->bindResults($statement);
 	}
