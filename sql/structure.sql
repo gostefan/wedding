@@ -1,12 +1,19 @@
 CREATE TABLE `users` (
-	`id`    INT          NOT NULL PRIMARY KEY AUTO_INCREMENT, 
-	`singular` BOOLEAN NOT NULL DEFAULT TRUE,
-	`name`  VARCHAR(200) NOT NULL,
-	`email` VARCHAR(100) NOT NULL UNIQUE,
-	`address` TEXT,
-	`dinnerInvite` BOOLEAN NOT NULL DEFAULT FALSE,
-	`username` VARCHAR(20) NOT NULL UNIQUE,
-	`pwd` VARCHAR(255) NOT NULL
+	`id`           INT          NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+	`singular`     BOOLEAN      NOT NULL DEFAULT TRUE,
+	`name`         VARCHAR(200) NOT NULL,
+	`email`        VARCHAR(100) NOT NULL UNIQUE,
+	`address`      TEXT,
+	`dinnerInvite` BOOLEAN NOT  NULL DEFAULT FALSE,
+	`username`     VARCHAR(20)  NOT NULL UNIQUE,
+	`pwd`          VARCHAR(255) NOT NULL
+	`status`       ENUM('NONE','ACCEPT','DECLINE') NOT NULL DEFAULT 'NONE',
+	`apero`        BOOLEAN      NOT NULL DEFAULT FALSE,
+	`dinner`       BOOLEAN      NOT NULL DEFAULT FALSE,
+	`hotel`        BOOLEAN      NOT NULL DEFAULT FALSE,
+	`plusOne`      BOOLEAN      NOT NULL DEFAULT FALSE,
+	`plusOneName`  VARCHAR(100)          DEFAULT NULL,
+	`comments` text
 ) ENGINE = InnoDB;
 
 CREATE TABLE `images` (
