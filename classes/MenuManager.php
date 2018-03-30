@@ -35,7 +35,7 @@ class MenuManager {
 				<a href="/home#information" onClick="return scrollToId('information')"><li>Informationen</li></a>
 				<a href="/anmelden"><li>Anmelden</li></a>
 				<a href="/wunschliste"><li>Wunschliste</li></a>
-				<a href="/home"><li>Gallerie</li></a>
+				<a href="https://gostefan.smugmug.com/2018/Hochzeit/" target="_blank"><li>Gallerie</li></a>
 <?php
 		if (User::getLoggedIn() != null) { ?>
 				<a href="/logout"><li>Logout</li></a>
