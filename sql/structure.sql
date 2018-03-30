@@ -41,7 +41,7 @@ CREATE TABLE `wishes` (
 	`longDescr`   TEXT(5000),
 	`price`       INT          NOT NULL,
 	`imageName`   VARCHAR(100) NOT NULL,
-	`moneyOnly`   BOOLEAN      NOT NULL DEFAULT FALSE,
+	`type`        ENUM('BOTH','INKIND','MONEY_ONLY') NOT NULL DEFAULT 'BOTH',
 	`category`    INT          NOT NULL,
 	`order`       INT          NOT NULL DEFAULT 1000
 ) ENGINE = InnoDB;
@@ -59,9 +59,10 @@ ALTER TABLE `wishes`
 	ON UPDATE CASCADE;
 
 CREATE TABLE `presents` (
-	`userid` INT,
-	`wishid` INT,
-	`amount` INT
+	`userid` INT     NOT NULL,
+	`wishid` INT     NOT NULL,
+	`amount` INT     NOT NULL,
+	`inKind` BOOLEAN NOT NULL
 ) ENGINE = InnoDB;
 ALTER TABLE `presents`
 	ADD INDEX `combination` (

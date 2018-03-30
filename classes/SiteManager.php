@@ -13,6 +13,8 @@ class SiteManager {
 				return new LogoutPage();
 			case "anmelden":
 				return new RegisterPage();
+			case "schenken":
+				return new PresentPage();
 			default:
 				return new HtmlPage($cleanName);
 		}
